@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Action</th>
+      <th scope="col">New Coin Amount</th>
+      <th scope="col">New Coin Value</th>
+      <th scope="col">New Account Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let key of keys">
+      <!-- To refernce a generated link , add routerlink attribute as an input betweek [] and an array of path segments which contain each segment in a sequencial order -->
+      <th scope="row"><a [routerLink]="['/ledger',ledger[key].id]">{{ledger[key]?.id}}</a></th>
+      <td>{{ledger[key].action}}</td>
+      <td>{{ledger[key]?.amount}}</td>
+      <td>${{ledger[key]?.value}}</td>
+      <td>${{ledger[key]?.balance}}</td>
+    </tr>
+
+
+
+
+  </tbody>

@@ -1,0 +1,15 @@
+<div class="container">
+  <form *ngIf="!answered; else reset" (submit)="submit()">
+    <p>Solve the question to mine more Shinto Coins:</p>
+    <label>What is the meaning of life?</label>
+    <div>
+      <input type="text" name="answer" [(ngModel)]="answer"/>
+      <button class="button btn-success">Submit</button>
+      <p class="feedback">{{message}}</p>
+    </div>
+  </form>
+  <ng-template #reset>
+    <p>Congratulations! You have earned one Shinto Coin! Click the button to answer another question.</p>
+    <button (click)="resetForm()" class="button btn-success">Reset</button>
+  </ng-template>
+</div>

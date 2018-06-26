@@ -1,0 +1,14 @@
+<div class="container">
+  <form *ngIf="!bought; else reset" (submit)="submit()">
+    <label>Amount to buy:</label>
+    <div>
+      <input type="number" name="toBuy" [(ngModel)]="toBuy"/>
+      <button class="button btn-success">Buy</button>
+      <p class="feedback">{{message}}</p>
+    </div>
+  </form>
+  <ng-template #reset>
+    <p>You have purchased {{toBuy}} Shinto coin(s). Click the "Buy More" button to continue shopping.</p>
+    <button (click)="resetForm()" class="button btn-success">Buy More</button>
+  </ng-template>
+</div>

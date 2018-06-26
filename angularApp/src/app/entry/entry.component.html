@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="jumbotron">
+    <div *ngIf="entry else nothing">
+      <h1 class="display-4">Transaction Details</h1>
+      <p><strong>Id:</strong> {{entry.id}}</p>
+      <p><strong>Action:</strong> {{entry.action}}</p>
+      <p><strong>New Coin Amount:</strong> {{entry.amount}}</p>
+      <p><strong>New Coin Value:</strong> ${{entry.value}}</p>
+      <p><strong>New Account Value:</strong> ${{entry.amount*entry.value}}</p>
+    </div>
+    <ng-template #nothing>
+      <p>No entry found!</p>
+    </ng-template>
+    <a [routerLink]="['/ledger']"><i class="fa fa-undo"></i> Back to ledger...</a>
+  </div>
+</div> 

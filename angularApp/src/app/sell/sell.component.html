@@ -1,0 +1,14 @@
+<div class="container">
+  <form *ngIf="!sold; else reset" (submit)="submit()">
+    <label>Amount to sell:</label>
+    <div>
+      <input type="number" name="toSell" [(ngModel)]="toSell"/>
+      <button class="button btn-success">Sell</button>
+      <p class="feedback">{{message}}</p>
+    </div>
+  </form>
+  <ng-template #reset>
+    <p>You have sold {{toSell}} Shinto coin(s). Click the "Sell More" button to continue shopping.</p>
+    <button (click)="resetForm()" class="button btn-success">Sell More</button>
+  </ng-template>
+</div>

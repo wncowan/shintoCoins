@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><i class="fa fa-dollar fa-5x"></i><span class="display-4">ShintoCoin</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['main']">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['mine']">Mine Coins</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['buy']">Buy Coins</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['sell']">Sell Coins</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['ledger']">Browse Ledger</a>
+    </li>
+  </ul>
+  <div>
+    <h2>Account Status</h2>
+    <p>Total Coins: <span [innerText]="latest.amount"></span></p>
+    <p>Coin Value: ${{latest.value}}</p>
+    <p>Account Value: ${{latest.balance}}</p>
+  </div>
+</div>
+</nav>
+
+<router-outlet></router-outlet>
